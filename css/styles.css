@@ -1,0 +1,34 @@
+/* FLEXBOX */
+.container {
+
+}
+
+.item-flex {
+
+}
+
+/* GRID */
+.grid-container {
+    height: 200px;
+    display: grid;
+    grid-template-rows: 50px 300px auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+.item-header {
+    grid-area: header;
+}
+
+.item-main {
+    grid-area: main;
+}
+
+.item-sidebar {
+    grid-area: sidebar;
+}
+.item-footer {
+    grid-area: footer;
+}

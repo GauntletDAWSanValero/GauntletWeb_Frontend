@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauntlet Pokémon Manager</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <h1 class="logo">PokeGauntlet</h1>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#/lista" class="nav-btn active" data-path="lista">Mostrar Todos</a></li>
+                    <li><a href="#/busqueda" class="nav-btn" data-path="busqueda">Buscar por Nombre</a></li>
+                    <li><a href="#/anadir" class="nav-btn" data-path="anadir">Añadir Pokémon</a></li>
+                    <li><a href="#/modificar" class="nav-btn" data-path="modificar">Modificar Datos</a></li>
+                    <li><a href="#/eliminar" class="nav-btn" data-path="eliminar">Eliminar Pokémon</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor dinámico de subpáginas -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Subpágina: Mostrar Todos -->
+            <section id="view-lista" class="subpage">
+                <div class="placeholder-card">
+                    <h2>Aquí se muestran todas</h2>
+                    <p class="subtitle">Sección estética para el listado global de Pokémon.</p>
+                </div>
+            </section>
+
+            <!--Subpágina: Buscar-->
+            <section id="view-busqueda" class="subpage">
+                <div class="placeholder-card">
+                    <h2>Aquí se busca un Pokémon por su nombre</h2>
+                    <p class="subtitle">Sección estética para el buscador de elementos.</p>
+                </div>
+            </section>
+
+            <!-- Subpágina: Añadir -->
+            <section id="view-anadir" class="subpage">
+                <div class="placeholder-card">
+                    <h2>Aquí se añade un nuevo Pokémon</h2>
+                    <p class="subtitle">Sección estética para el formulario de inserción.</p>
+                </div>
+            </section>
+
+            <!-- Subpágina: Modificar -->
+            <section id="view-modificar" class="subpage">
+                <div class="placeholder-card">
+                    <h2>Aquí se cambian los datos</h2>
+                    <p class="subtitle">Sección estética para la edición de registros.</p>
+                </div>
+            </section>
+
+            <!-- Subpágina: Eliminar -->
+            <section id="view-eliminar" class="subpage">
+                <div class="placeholder-card">
+                    <h2>Aquí se eliminan datos</h2>
+                    <p class="subtitle">Sección estética para el borrado de Pokémon de la base de datos.</p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

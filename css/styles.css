@@ -1,34 +1,129 @@
-/* FLEXBOX */
+:root {
+    --primary-color: #ef5350;
+    --dark-color: #263238;
+    --light-bg: #f5f7fa;
+    --white: #ffffff;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    margin: 0;
+}
+
 .container {
-
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.item-flex {
-
+/* Cabecera estructurada en una sola línea */
+.main-header {
+    background-color: var(--dark-color);
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* GRID */
-.grid-container {
-    height: 200px;
-    display: grid;
-    grid-template-rows: 50px 300px auto;
-    grid-template-areas:
-        "header header"
-        "sidebar main"
-        "footer footer";
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* Impide que salte de línea */
+    gap: 20px;
 }
 
-.item-header {
-    grid-area: header;
+.logo {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    white-space: nowrap; /* Evita que el logo se rompa en dos líneas */
 }
 
-.item-main {
-    grid-area: main;
+/* Menú de navegación horizontal estricto */
+.nav-menu {
+    overflow-x: auto; /* Permite scroll horizontal en móviles si el espacio falta */
+    scrollbar-width: none; /* Oculta barra en Firefox */
 }
 
-.item-sidebar {
-    grid-area: sidebar;
+.nav-menu::-webkit-scrollbar {
+    display: none; /* Oculta barra en Chrome/Safari */
 }
-.item-footer {
-    grid-area: footer;
+
+.nav-menu ul {
+    display: flex;
+    flex-wrap: nowrap; /* Fuerza una sola línea */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: #b0bec5;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    white-space: nowrap; /* Asegura que el texto del botón no se divida */
+    transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-btn.active {
+    color: var(--white);
+    background-color: var(--primary-color);
+}
+
+/* Contenedor de subpáginas */
+/* Sistema de Subpáginas ocultas/visibles */
+.subpage {
+    display: none; /* Oculta todas por defecto para que no se pisen */
+    margin-top: 40px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.subpage.active {
+    display: block; /* Muestra solo la pestaña activa */
+}
+.error-message {
+    display: block;
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 1em; /* Mantiene el espacio reservado para que no salte el diseño */
+}
+
+
+.placeholder-card {
+    background-color: var(--white);
+    border-top: 4px solid var(--primary-color);
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.placeholder-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.subtitle {
+    color: #78909c;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }
